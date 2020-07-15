@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "games-blog": {
@@ -121,8 +121,16 @@
               "devServerTarget": "games-blog:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "games-blog"
+    }
+  },
+  "defaultProject": "games-blog",
+  "cli": {
+    "analytics": "e403f93c-ff7b-4415-abce-32ffea73fdb2"
+  }
 }
