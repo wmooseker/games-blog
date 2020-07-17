@@ -1,0 +1,50 @@
+.hero{
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    color:white;
+    text-shadow: 1px 4px 4px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+
+    
+}
+.hero h1{
+    font-size: 9rem;
+}
+.hero img {
+    max-height: 40vh;
+    max-width:80vw;
+
+}
+.row {
+    display: flex;
+}
+.column {
+    flex: 50%;
+}
+.imgcolumn {
+    width: 50vw;
+    min-height: 20vw;
+    max-height: 50vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.column .mat-card {
+    margin-left:5vw;
+    margin-right:5vw;
+    margin-top:50px;
+    margin-bottom:50px;
+    background: #607d8b;
+}
+.column .mat-card .mat-card-header{
+    border-bottom: 4px solid #424242;
+    margin-bottom: 20px;
+}

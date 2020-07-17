@@ -12,21 +12,44 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$games-blog-primary: mat-palette($mat-indigo);
+$games-blog-primary: mat-palette($mat-amber);
 $games-blog-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $games-blog-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$games-blog-theme: mat-light-theme($games-blog-primary, $games-blog-accent, $games-blog-warn);
+$light-theme: mat-light-theme($games-blog-primary, $games-blog-accent, $games-blog-warn);
 
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($games-blog-theme);
+@media (prefers-color-scheme: light) {
+    
+    @include angular-material-theme($light-theme);
+}
+  
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #b6b6b6;
+        --background: #2e2e2e;
+    }
+    @include angular-material-theme($dark-theme);
+}
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// Include the dark color styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
+
+html, body { height: 100%; color: var(--text-color);
+    background: var(--background); }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden; }
+.flex-space-between {
+    justify-content: space-between;
+  }

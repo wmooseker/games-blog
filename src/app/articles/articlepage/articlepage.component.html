@@ -1,0 +1,87 @@
+<!-- <div *ngIf="article | async">
+    {{article.title}}
+</div> -->
+
+  <!-- our parallax stuff -->
+
+<div *ngIf="article" class="hero" [ngStyle]="{ 'background-image': 'url(' + article.headerphotoref + ')'}">
+    <img src="{{article.headerlogoimageref}}">
+</div>
+<div class="mat-elevation-z4"  *ngIf="article" >
+
+    
+    <div *ngFor="let topic of article.topics; let i=index">
+        <div *ngIf='i % 2 == 0;then thenBlock else elseBlock'>
+            
+            
+        </div>
+        <ng-template #thenBlock>
+            <div class="row">
+                <div class="column imgcolumn"[ngStyle]="{ 'background-image': 'url(' + topic.photoref + ')'}">
+
+                </div>
+                <div class="column">
+                    <mat-card color="primary" class="topic-card">
+                        <mat-card-header>
+                            <h2>{{topic.title}}</h2>
+                        </mat-card-header>
+                        <mat-card-content> 
+                            <p>{{topic.text}}Shut up! Will you shut up?! Bring her forward! What a strange person. I'm not a witch. Where'd you get the coconuts? Well,
+                                how'd you become king, then? Why do you think that she is a witch? …Are you suggesting that coconuts migrate? I don't
+                                want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother
+                                was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time! You don't
+                                vote for kings. You can't expect to wield supreme power just 'cause some watery tart threw a sword at you! Be quiet!
+                                I am your king. We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water!
+                                I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I
+                                am forced to taunt you a second time! Listen. Strange women lying in ponds distributing swords is no basis for a system
+                                of government. Supreme executive power derives from a mandate from the masses, not from some farcical aquatic ceremony.
+                                Well, I didn't vote for you. I am your king. Where'd you get the coconuts? Be quiet! You can't expect to wield supreme
+                                power just 'cause some watery tart threw a sword at you! Knights of Ni, we are but simple travelers who seek the enchanter
+                                who lives beyond these woods. Look, my liege! Shut up! Listen. Strange women lying in ponds distributing swords is no
+                                basis for a system of government. Supreme executive power derives from a mandate from the masses, not from some farcical
+                                aquatic ceremony. I have to push the pram a lot. I'm not a witch. But you are dressed as one… Camelot! Bloody Peasant!
+                                Well, I didn't vote for you. Well, she turned me into a newt. She looks like one. Shut up! Will you shut up?! The Knights</p>
+                        </mat-card-content>              
+                    </mat-card>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #elseBlock>
+            <div class="row">
+                <div class="column">
+                    <mat-card color="primary" class="topic-card">
+                        <mat-card-header>
+                            <h2>{{topic.title}}</h2>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>{{topic.text}}Shut up! Will you shut up?! Bring her forward! What a strange person. I'm not a witch. Where'd you get the coconuts? Well,
+                                how'd you become king, then? Why do you think that she is a witch? …Are you suggesting that coconuts migrate? I don't
+                                want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother
+                                was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time! You don't
+                                vote for kings. You can't expect to wield supreme power just 'cause some watery tart threw a sword at you! Be quiet!
+                                I am your king. We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water!
+                                I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I
+                                am forced to taunt you a second time! Listen. Strange women lying in ponds distributing swords is no basis for a system
+                                of government. Supreme executive power derives from a mandate from the masses, not from some farcical aquatic ceremony.
+                                Well, I didn't vote for you. I am your king. Where'd you get the coconuts? Be quiet! You can't expect to wield supreme
+                                power just 'cause some watery tart threw a sword at you! Knights of Ni, we are but simple travelers who seek the enchanter
+                                who lives beyond these woods. Look, my liege! Shut up! Listen. Strange women lying in ponds distributing swords is no
+                                basis for a system of government. Supreme executive power derives from a mandate from the masses, not from some farcical
+                                aquatic ceremony. I have to push the pram a lot. I'm not a witch. But you are dressed as one… Camelot! Bloody Peasant!
+                                Well, I didn't vote for you. Well, she turned me into a newt. She looks like one. Shut up! Will you shut up?! The Knights</p>
+                        </mat-card-content>              
+                    </mat-card>
+                </div>
+                <div class="column imgcolumn"[ngStyle]="{ 'background-image': 'url(' + topic.photoref + ')'}">
+
+                </div>
+            </div>
+        </ng-template>
+        
+    </div>
+    <!-- <p>{{article.topics[0]['title']}}</p>
+    <p>{{article.topics[0]['text']}}</p>
+    <p>{{article.topics[0]['photoref']}}</p> -->
+    
+</div>
+
